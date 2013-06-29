@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="SilverlightTiledImageBrush.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tile="clr-namespace:TileShaderEffect"
+    mc:Ignorable="d"
+    d:DesignHeight="448" d:DesignWidth="512">
+
+    <Grid x:Name="LayoutRoot" Background="White" Margin="0,0,-181,-25">
+        <Grid.Resources>
+            <ControlTemplate x:Key="ButtonTemplate">
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Rectangle RadiusX="35" RadiusY="35" 
+                                   Fill="{TemplateBinding Background}" 
+                                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                    <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                </Grid>
+            </ControlTemplate>
+        </Grid.Resources>
+        <Button x:Name="SampleButtonTileMode" Content="Tile Mode" HorizontalAlignment="Left" Margin="228,10,0,46" 
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Template="{StaticResource ButtonTemplate}"
+                tile:Tile.Mode="Tile"
+                Width="217">
+            <Button.Background>
+                <!--<SolidColorBrush Color="CadetBlue" />-->
+                <ImageBrush Stretch="Fill" ImageSource="grey_wash_wall.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="SampleButton" Content="Button" HorizontalAlignment="Left" Margin="459,10,0,46" 
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Template="{StaticResource ButtonTemplate}"
+                Width="186">
+            <Button.Background>
+                <!--<SolidColorBrush Color="CadetBlue" />-->
+                <ImageBrush Stretch="Fill" ImageSource="grey_wash_wall.png"/>
+            </Button.Background>
+        </Button>
+        <ListBox x:Name="ListBox1" 
+                 HorizontalAlignment="Left" 
+                 Margin="10,10,0,46" 
+                 Width="213" 
+                 tile:Tile.Mode="Tile"
+                  >
+            <ListBox.Background>
+                <ImageBrush Stretch="Fill" ImageSource="grey_wash_wall.png"/>
+            </ListBox.Background>
+            <ListBoxItem>Antigua</ListBoxItem>
+            <ListBoxItem>Barbados</ListBoxItem>
+            <ListBoxItem>Canary Islands</ListBoxItem>
+            <ListBoxItem>Djibouti</ListBoxItem>
+            <ListBoxItem>Eritrea</ListBoxItem>
+            <ListBoxItem>Fiji</ListBoxItem>
+            <ListBoxItem>Gilbraltar</ListBoxItem>
+            <ListBoxItem>Haiti</ListBoxItem>
+        </ListBox>
+
+    </Grid>
+</UserControl>
